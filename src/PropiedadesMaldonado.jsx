@@ -76,14 +76,14 @@ const PROPERTIES = [
         alt: 'Cocina luminosa con mobiliario blanco y mesadas de madera',
       },
       {
-        src: 'https://images.unsplash.com/photo-1591965293284-79d4586f4520?auto=format&fit=crop&w=1200&q=80',
+        src: 'https://images.unsplash.com/photo-1693631561237-d5c8e8256140?auto=format&fit=crop&w=1200&q=80',
         label: 'Dormitorio principal',
-        alt: 'Dormitorio amplio y luminoso de estilo minimalista',
+        alt: 'Dormitorio amplio y luminoso con ventanal y cama principal',
       },
       {
-        src: 'https://images.unsplash.com/photo-1752454162935-317ed06f1f2e?auto=format&fit=crop&w=1200&q=80',
+        src: 'https://images.unsplash.com/photo-1721825154477-8c3a0688e159?auto=format&fit=crop&w=1200&q=80',
         label: 'Baño completo',
-        alt: 'Baño moderno con iluminación natural y terminaciones claras',
+        alt: 'Baño moderno luminoso con lavatorio y terminaciones claras',
       },
     ],
   },
@@ -120,9 +120,9 @@ const PROPERTIES = [
         alt: 'Cocina moderna con isla y comedor integrado',
       },
       {
-        src: 'https://images.unsplash.com/photo-1611506420749-9cbb8e5a1057?auto=format&fit=crop&w=1200&q=80',
+        src: 'https://images.unsplash.com/photo-1649817018876-c05473c7e5a4?auto=format&fit=crop&w=1200&q=80',
         label: 'Dormitorio principal',
-        alt: 'Dormitorio residencial con entrada de luz natural',
+        alt: 'Dormitorio residencial con cama y entrada de luz natural',
       },
     ],
   },
@@ -159,9 +159,9 @@ const PROPERTIES = [
         alt: 'Cocina funcional con excelente iluminación',
       },
       {
-        src: 'https://images.unsplash.com/photo-1597293544475-16730f31a638?auto=format&fit=crop&w=1200&q=80',
+        src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
         label: 'Dormitorio',
-        alt: 'Dormitorio luminoso con detalles cálidos en madera',
+        alt: 'Dormitorio luminoso con cama matrimonial y tonos cálidos',
       },
     ],
   },
@@ -1577,18 +1577,19 @@ export default function PropiedadesMaldonado() {
           >
             {showAllPhotos ? (
               <div className="border-b border-[#E8E8ED] bg-[#F5F5F7] p-5 sm:p-7">
-                <div className="mb-4 flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2">
+                <div className="mb-4 flex items-center justify-between gap-2">
+                  <div className="flex min-w-0 items-center gap-2.5">
                     <button
                       type="button"
                       onClick={() => setShowAllPhotos(false)}
-                      className="inline-flex min-h-[36px] items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-[13px] font-medium text-[#1D1D1F] shadow-sm transition-colors hover:bg-[#E8E8ED] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC]"
+                      className="inline-flex min-h-[36px] shrink-0 whitespace-nowrap items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-[13px] font-medium text-[#1D1D1F] shadow-sm transition-colors hover:bg-[#E8E8ED] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC]"
                     >
                       <ChevronLeft className="h-4 w-4" aria-hidden="true" />
                       <span>Volver al visor</span>
                     </button>
-                    <span className="text-[13px] font-medium text-[#6E6E73]">
-                      Repositorio de fotos ({selectedProperty.gallery.length})
+                    <span className="truncate text-[13px] font-medium text-[#6E6E73]">
+                      <span className="hidden sm:inline">Repositorio de fotos</span>
+                      <span className="sm:hidden">Fotos</span> ({selectedProperty.gallery.length})
                     </span>
                   </div>
 
@@ -1597,7 +1598,7 @@ export default function PropiedadesMaldonado() {
                     type="button"
                     onClick={() => setSelectedProperty(null)}
                     aria-label="Cerrar ficha de propiedad"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#1D1D1F] shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0066CC]"
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-[#1D1D1F] shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0066CC]"
                   >
                     <X className="h-4 w-4" aria-hidden="true" />
                   </button>
@@ -1618,7 +1619,7 @@ export default function PropiedadesMaldonado() {
                           : 'ring-1 ring-[#D2D2D7]/80 hover:ring-[#86868B]'
                       }`}
                     >
-                      <div className="aspect-[16/10] w-full overflow-hidden">
+                      <div className="aspect-[16/10] w-full overflow-hidden bg-[#E8E8ED]">
                         <img
                           src={photo.src}
                           alt={photo.alt}
@@ -1727,7 +1728,7 @@ export default function PropiedadesMaldonado() {
                         onClick={() => setActivePhotoIndex(index)}
                         aria-label={`Ver foto ${index + 1}: ${photo.label}`}
                         aria-current={isActive ? 'true' : undefined}
-                        className={`group relative h-12 w-20 shrink-0 overflow-hidden rounded-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC] sm:h-14 sm:w-24 ${
+                        className={`group relative h-12 w-20 shrink-0 overflow-hidden rounded-xl bg-[#E8E8ED] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC] sm:h-14 sm:w-24 ${
                           isActive
                             ? 'ring-2 ring-[#0066CC] ring-offset-2 ring-offset-[#F5F5F7]'
                             : 'opacity-70 hover:opacity-100'
