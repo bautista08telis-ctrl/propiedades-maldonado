@@ -8,8 +8,11 @@ import {
   Building2,
   Car,
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
   Home,
+  Images,
+  LayoutGrid,
   Mail,
   MapPin,
   Maximize2,
@@ -61,9 +64,28 @@ const PROPERTIES = [
     summary: '2 dormitorios, 1 baño, living comedor, cocina, terraza lavadero y balcón.',
     description:
       'Unidad luminosa ubicada en pleno centro de Maldonado, con distribución funcional de 60 m². Cuenta con living comedor amplio con salida a balcón, cocina equipada, terraza lavadero independiente y dos dormitorios cómodos con excelente acceso a servicios y locomoción.',
-    image:
-      'https://images.unsplash.com/photo-1751945965597-71171ec7a458?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Living comedor luminoso de apartamento céntrico en Maldonado',
+    gallery: [
+      {
+        src: 'https://images.unsplash.com/photo-1751945965597-71171ec7a458?auto=format&fit=crop&w=1200&q=80',
+        label: 'Living comedor',
+        alt: 'Living comedor luminoso de apartamento céntrico en Maldonado',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1769745241584-be9b8227e126?auto=format&fit=crop&w=1200&q=80',
+        label: 'Cocina definida',
+        alt: 'Cocina luminosa con mobiliario blanco y mesadas de madera',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1591965293284-79d4586f4520?auto=format&fit=crop&w=1200&q=80',
+        label: 'Dormitorio principal',
+        alt: 'Dormitorio amplio y luminoso de estilo minimalista',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1752454162935-317ed06f1f2e?auto=format&fit=crop&w=1200&q=80',
+        label: 'Baño completo',
+        alt: 'Baño moderno con iluminación natural y terminaciones claras',
+      },
+    ],
   },
   {
     id: 'casa-barrio-asturias-san-carlos',
@@ -81,9 +103,28 @@ const PROPERTIES = [
     summary: '3 dormitorios, 2 baños y 95 m² en zona residencial consolidada.',
     description:
       'Residencia sólida de 95 m² edificados en Barrio Asturias, San Carlos. Pensada para la vida familiar, ofrece tres dormitorios bien proporcionados, dos baños completos y ambientes equilibrados en un entorno tranquilo y cercano al centro de la ciudad.',
-    image:
-      'https://images.unsplash.com/photo-1783125127195-46eaaac89437?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Casa residencial con jardín al frente en Barrio Asturias, San Carlos',
+    gallery: [
+      {
+        src: 'https://images.unsplash.com/photo-1783125127195-46eaaac89437?auto=format&fit=crop&w=1200&q=80',
+        label: 'Fachada y frente',
+        alt: 'Casa residencial con jardín al frente en Barrio Asturias, San Carlos',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1757924461488-ef9ad0670978?auto=format&fit=crop&w=1200&q=80',
+        label: 'Living principal',
+        alt: 'Sala de estar amplia con ventanales hacia el jardín',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1758565811352-a439bd6f956e?auto=format&fit=crop&w=1200&q=80',
+        label: 'Cocina y comedor',
+        alt: 'Cocina moderna con isla y comedor integrado',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1611506420749-9cbb8e5a1057?auto=format&fit=crop&w=1200&q=80',
+        label: 'Dormitorio principal',
+        alt: 'Dormitorio residencial con entrada de luz natural',
+      },
+    ],
   },
   {
     id: 'casa-barrio-norte-maldonado',
@@ -101,9 +142,28 @@ const PROPERTIES = [
     summary: '2 dormitorios, 1 baño, living-comedor con estufa, cocina y patio.',
     description:
       'Acogedora casa de 65 m² en Barrio Norte, Maldonado. Dispone de living-comedor con estufa a leña para disfrutar todo el año, cocina práctica, dos dormitorios, un baño completo y patio propio ideal para esparcimiento al aire libre.',
-    image:
-      'https://images.unsplash.com/photo-1674672670977-bcf517fc2376?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Casa residencial con jardín y patio en Barrio Norte, Maldonado',
+    gallery: [
+      {
+        src: 'https://images.unsplash.com/photo-1674672670977-bcf517fc2376?auto=format&fit=crop&w=1200&q=80',
+        label: 'Patio y parrillero',
+        alt: 'Patio privado con pérgola y parrillero en Barrio Norte, Maldonado',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1793986570668-14bdc8ef31fb?auto=format&fit=crop&w=1200&q=80',
+        label: 'Living-comedor con estufa',
+        alt: 'Living-comedor acogedor con estufa a leña y luz natural',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1602028644961-dd13cb5d0c72?auto=format&fit=crop&w=1200&q=80',
+        label: 'Cocina',
+        alt: 'Cocina funcional con excelente iluminación',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1597293544475-16730f31a638?auto=format&fit=crop&w=1200&q=80',
+        label: 'Dormitorio',
+        alt: 'Dormitorio luminoso con detalles cálidos en madera',
+      },
+    ],
   },
   {
     id: 'penthouse-centrico-maldonado',
@@ -122,9 +182,28 @@ const PROPERTIES = [
     summary: '1 dormitorio, 1 baño, living comedor, cocina, terraza y cochera.',
     description:
       'Exclusivo penthouse en el centro de Maldonado que combina privacidad, vistas abiertas y practicidad urbana. Cuenta con un dormitorio, baño completo, living comedor integrado a cocina, amplia terraza de uso exclusivo y cochera propia.',
-    image:
-      'https://images.unsplash.com/photo-1644695931691-90d9183a7ccd?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Vista urbana desde terraza alta de penthouse céntrico en Maldonado',
+    gallery: [
+      {
+        src: 'https://images.unsplash.com/photo-1644695931691-90d9183a7ccd?auto=format&fit=crop&w=1200&q=80',
+        label: 'Vista panorámica',
+        alt: 'Vista urbana desde terraza alta de penthouse céntrico en Maldonado',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1748679767437-00b5c0327b1a?auto=format&fit=crop&w=1200&q=80',
+        label: 'Living comedor',
+        alt: 'Living comedor contemporáneo con mobiliario minimalista',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1758193431353-87812fbff5cd?auto=format&fit=crop&w=1200&q=80',
+        label: 'Terraza de uso exclusivo',
+        alt: 'Terraza exterior de apartamento con espacio de estar',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1768486143865-342d8cc12c90?auto=format&fit=crop&w=1200&q=80',
+        label: 'Cocina integrada',
+        alt: 'Cocina moderna con isla y líneas limpias',
+      },
+    ],
   },
   {
     id: 'local-camino-de-los-gauchos',
@@ -143,9 +222,23 @@ const PROPERTIES = [
     summary: 'Salón comercial amplio de 100 m² sobre eje comercial consolidado.',
     description:
       'Amplio salón comercial de 100 m² ubicado sobre Camino de los Gauchos, una de las arterias comerciales con mayor movimiento de Maldonado. Su planta versátil permite adaptarlo fácilmente a showroom, atención al público, depósito o servicios.',
-    image:
-      'https://images.unsplash.com/photo-1778034758286-d58d597db0a4?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Salón comercial amplio e iluminado en Camino de los Gauchos',
+    gallery: [
+      {
+        src: 'https://images.unsplash.com/photo-1778034758286-d58d597db0a4?auto=format&fit=crop&w=1200&q=80',
+        label: 'Salón principal',
+        alt: 'Salón comercial amplio e iluminado en Camino de los Gauchos',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1771033834141-023d630b3965?auto=format&fit=crop&w=1200&q=80',
+        label: 'Área de exhibición',
+        alt: 'Espacio interior comercial luminoso para exhibición',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1735217802452-7aa1d548f3b9?auto=format&fit=crop&w=1200&q=80',
+        label: 'Zona de atención',
+        alt: 'Sector comercial equipado para atención al público',
+      },
+    ],
   },
   {
     id: 'terreno-fructuoso-rivera',
@@ -164,9 +257,23 @@ const PROPERTIES = [
     summary: 'Lote de 300 m² listo para construir en punto estratégico de Maldonado.',
     description:
       'Excelente oportunidad de inversión o proyecto residencial en Fructuoso Rivera casi Camino de los Gauchos. Lote nivelado de 300 m² listo para construir, con rápida conexión a comercios, centros educativos y arterias principales de Maldonado.',
-    image:
-      'https://images.unsplash.com/photo-1623138860012-c0c4f41d6433?auto=format&fit=crop&w=1200&q=80',
-    imageAlt: 'Terreno verde nivelado de 300 m² listo para construir en Maldonado',
+    gallery: [
+      {
+        src: 'https://images.unsplash.com/photo-1623138860012-c0c4f41d6433?auto=format&fit=crop&w=1200&q=80',
+        label: 'Vista del lote',
+        alt: 'Terreno verde nivelado de 300 m² listo para construir en Maldonado',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1602351592699-3e8fe8afe887?auto=format&fit=crop&w=1200&q=80',
+        label: 'Entorno arbolado',
+        alt: 'Vegetación y orientación soleada del terreno',
+      },
+      {
+        src: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
+        label: 'Orientación solar',
+        alt: 'Vista abierta del terreno y horizonte despejado',
+      },
+    ],
   },
 ];
 
@@ -274,6 +381,8 @@ export default function PropiedadesMaldonado() {
   const [zone, setZone] = useState('Todas');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedProperty, setSelectedProperty] = useState(null);
+  const [activePhotoIndex, setActivePhotoIndex] = useState(0);
+  const [showAllPhotos, setShowAllPhotos] = useState(false);
 
   const [formValues, setFormValues] = useState({
     nombre: '',
@@ -320,6 +429,18 @@ export default function PropiedadesMaldonado() {
         setSelectedProperty(null);
         return;
       }
+      if (e.key === 'ArrowRight' && selectedProperty.gallery.length > 1) {
+        setShowAllPhotos(false);
+        setActivePhotoIndex((prev) => (prev + 1) % selectedProperty.gallery.length);
+        return;
+      }
+      if (e.key === 'ArrowLeft' && selectedProperty.gallery.length > 1) {
+        setShowAllPhotos(false);
+        setActivePhotoIndex(
+          (prev) => (prev - 1 + selectedProperty.gallery.length) % selectedProperty.gallery.length
+        );
+        return;
+      }
       if (e.key === 'Tab') {
         const dialog = document.getElementById('property-detail-dialog');
         if (!dialog) return;
@@ -349,6 +470,12 @@ export default function PropiedadesMaldonado() {
       }
     };
   }, [selectedProperty]);
+
+  const openPropertyModal = (property) => {
+    setActivePhotoIndex(0);
+    setShowAllPhotos(false);
+    setSelectedProperty(property);
+  };
 
   const resetFilters = () => {
     setOperation('Todas');
@@ -856,14 +983,14 @@ export default function PropiedadesMaldonado() {
                   >
                     <button
                       type="button"
-                      onClick={() => setSelectedProperty(property)}
-                      aria-label={`Ver detalles de ${property.title}`}
+                      onClick={() => openPropertyModal(property)}
+                      aria-label={`Ver ficha y galería de ${property.title}`}
                       className="flex h-full flex-col text-left focus:outline-none focus-visible:ring-4 focus-visible:ring-inset focus-visible:ring-[#0066CC]/40 rounded-3xl"
                     >
                       <div className="relative aspect-[16/11] w-full overflow-hidden bg-[#E8E8ED]">
                         <img
-                          src={property.image}
-                          alt={property.imageAlt}
+                          src={property.gallery[0].src}
+                          alt={property.gallery[0].alt}
                           loading="lazy"
                           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none"
                         />
@@ -880,6 +1007,11 @@ export default function PropiedadesMaldonado() {
                           <span className="rounded-full bg-white/85 px-3 py-1 text-[11px] font-medium text-[#1D1D1F] backdrop-blur-md">
                             {property.zone}
                           </span>
+                        </div>
+
+                        <div className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 px-2.5 py-1 text-[11px] font-medium text-white backdrop-blur-md">
+                          <Images className="h-3.5 w-3.5" aria-hidden="true" />
+                          <span>{property.gallery.length} fotos</span>
                         </div>
                       </div>
 
@@ -1429,7 +1561,7 @@ export default function PropiedadesMaldonado() {
         </div>
       </footer>
 
-      {/* Modal de Detalle de Propiedad (Estilo Apple) */}
+      {/* Modal de Detalle y Repositorio de Fotos de la Propiedad (Estilo Apple) */}
       {selectedProperty && (
         <div
           className="fixed inset-0 z-50 flex items-end justify-center bg-black/45 p-0 backdrop-blur-sm sm:items-center sm:p-6"
@@ -1441,33 +1573,177 @@ export default function PropiedadesMaldonado() {
             aria-modal="true"
             aria-labelledby="modal-property-title"
             onClick={(e) => e.stopPropagation()}
-            className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-t-3xl bg-white shadow-[0_28px_80px_rgba(0,0,0,0.24)] sm:rounded-3xl"
+            className="relative max-h-[92vh] w-full max-w-3xl overflow-y-auto rounded-t-3xl bg-white shadow-[0_28px_80px_rgba(0,0,0,0.24)] sm:rounded-3xl"
           >
-            <div className="relative h-56 w-full overflow-hidden bg-[#F5F5F7] sm:h-64">
-              <img
-                src={selectedProperty.image}
-                alt={selectedProperty.imageAlt}
-                className="h-full w-full object-cover"
-              />
-              <button
-                ref={modalCloseRef}
-                type="button"
-                onClick={() => setSelectedProperty(null)}
-                aria-label="Cerrar ficha de propiedad"
-                className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1D1D1F] shadow-md backdrop-blur-md transition-transform hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0066CC]"
-              >
-                <X className="h-5 w-5" aria-hidden="true" />
-              </button>
+            {showAllPhotos ? (
+              <div className="border-b border-[#E8E8ED] bg-[#F5F5F7] p-5 sm:p-7">
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setShowAllPhotos(false)}
+                      className="inline-flex min-h-[36px] items-center gap-1.5 rounded-full bg-white px-3.5 py-1.5 text-[13px] font-medium text-[#1D1D1F] shadow-sm transition-colors hover:bg-[#E8E8ED] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC]"
+                    >
+                      <ChevronLeft className="h-4 w-4" aria-hidden="true" />
+                      <span>Volver al visor</span>
+                    </button>
+                    <span className="text-[13px] font-medium text-[#6E6E73]">
+                      Repositorio de fotos ({selectedProperty.gallery.length})
+                    </span>
+                  </div>
 
-              <div className="absolute bottom-4 left-4 flex items-center gap-2">
-                <span className="rounded-full bg-[#1D1D1F]/85 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.06em] text-white backdrop-blur-md">
-                  {selectedProperty.operation}
-                </span>
-                <span className="rounded-full bg-white/90 px-3.5 py-1 text-[11px] font-medium text-[#1D1D1F] backdrop-blur-md">
-                  {selectedProperty.type} · {selectedProperty.zone}
-                </span>
+                  <button
+                    ref={modalCloseRef}
+                    type="button"
+                    onClick={() => setSelectedProperty(null)}
+                    aria-label="Cerrar ficha de propiedad"
+                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#1D1D1F] shadow-sm transition-transform hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0066CC]"
+                  >
+                    <X className="h-4 w-4" aria-hidden="true" />
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {selectedProperty.gallery.map((photo, index) => (
+                    <button
+                      key={photo.src}
+                      type="button"
+                      onClick={() => {
+                        setActivePhotoIndex(index);
+                        setShowAllPhotos(false);
+                      }}
+                      className={`group relative overflow-hidden rounded-2xl bg-white text-left transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0066CC]/40 ${
+                        index === activePhotoIndex
+                          ? 'ring-2 ring-[#0066CC]'
+                          : 'ring-1 ring-[#D2D2D7]/80 hover:ring-[#86868B]'
+                      }`}
+                    >
+                      <div className="aspect-[16/10] w-full overflow-hidden">
+                        <img
+                          src={photo.src}
+                          alt={photo.alt}
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        />
+                      </div>
+                      <div className="flex items-center justify-between px-3.5 py-2 text-[12px] font-medium text-[#1D1D1F]">
+                        <span>{photo.label}</span>
+                        <span className="text-[#86868B]">
+                          {index + 1} / {selectedProperty.gallery.length}
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            ) : (
+              <>
+                <div className="relative h-56 w-full overflow-hidden bg-[#F5F5F7] sm:h-64">
+                  <img
+                    src={selectedProperty.gallery[activePhotoIndex]?.src}
+                    alt={selectedProperty.gallery[activePhotoIndex]?.alt}
+                    className="h-full w-full object-cover"
+                  />
+
+                  <button
+                    ref={modalCloseRef}
+                    type="button"
+                    onClick={() => setSelectedProperty(null)}
+                    aria-label="Cerrar ficha de propiedad"
+                    className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-[#1D1D1F] shadow-md backdrop-blur-md transition-transform hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0066CC]"
+                  >
+                    <X className="h-5 w-5" aria-hidden="true" />
+                  </button>
+
+                  {selectedProperty.gallery.length > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setActivePhotoIndex(
+                            (prev) =>
+                              (prev - 1 + selectedProperty.gallery.length) %
+                              selectedProperty.gallery.length
+                          )
+                        }
+                        aria-label="Foto anterior"
+                        className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#1D1D1F] shadow-md backdrop-blur-md transition-transform hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0066CC]"
+                      >
+                        <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setActivePhotoIndex(
+                            (prev) => (prev + 1) % selectedProperty.gallery.length
+                          )
+                        }
+                        aria-label="Siguiente foto"
+                        className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#1D1D1F] shadow-md backdrop-blur-md transition-transform hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0066CC]"
+                      >
+                        <ChevronRight className="h-5 w-5" aria-hidden="true" />
+                      </button>
+                    </>
+                  )}
+
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/35 to-transparent" aria-hidden="true" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/60 to-transparent" aria-hidden="true" />
+
+                  <div className="absolute left-4 top-4 flex flex-wrap items-center gap-2 pr-14">
+                    <span className="rounded-full bg-[#1D1D1F]/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.06em] text-white backdrop-blur-md">
+                      {selectedProperty.operation}
+                    </span>
+                    <span className="rounded-full bg-white/90 px-3 py-1 text-[11px] font-medium text-[#1D1D1F] backdrop-blur-md">
+                      {selectedProperty.type} · {selectedProperty.zone}
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-3.5 left-4 right-4 flex flex-wrap items-center justify-between gap-2">
+                    <span className="rounded-full bg-black/65 px-3 py-1 text-[12px] font-medium text-white backdrop-blur-md">
+                      {activePhotoIndex + 1} / {selectedProperty.gallery.length} ·{' '}
+                      {selectedProperty.gallery[activePhotoIndex]?.label}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setShowAllPhotos(true)}
+                      className="inline-flex min-h-[32px] items-center gap-1.5 rounded-full bg-white/95 px-3 py-1 text-[12px] font-medium text-[#1D1D1F] shadow-sm backdrop-blur-md transition-colors hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC]"
+                    >
+                      <LayoutGrid className="h-3.5 w-3.5" aria-hidden="true" />
+                      <span>Ver todas ({selectedProperty.gallery.length})</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Tira de miniaturas del repositorio de fotos */}
+                <div
+                  aria-label="Galería de fotos de la propiedad"
+                  className="flex items-center gap-2.5 overflow-x-auto border-b border-[#E8E8ED] bg-[#F5F5F7] px-5 py-2.5 sm:px-7"
+                >
+                  {selectedProperty.gallery.map((photo, index) => {
+                    const isActive = index === activePhotoIndex;
+                    return (
+                      <button
+                        key={photo.src}
+                        type="button"
+                        onClick={() => setActivePhotoIndex(index)}
+                        aria-label={`Ver foto ${index + 1}: ${photo.label}`}
+                        aria-current={isActive ? 'true' : undefined}
+                        className={`group relative h-12 w-20 shrink-0 overflow-hidden rounded-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0066CC] sm:h-14 sm:w-24 ${
+                          isActive
+                            ? 'ring-2 ring-[#0066CC] ring-offset-2 ring-offset-[#F5F5F7]'
+                            : 'opacity-70 hover:opacity-100'
+                        }`}
+                      >
+                        <img
+                          src={photo.src}
+                          alt={photo.label}
+                          className="h-full w-full object-cover"
+                        />
+                      </button>
+                    );
+                  })}
+                </div>
+              </>
+            )}
 
             <div className="p-5 sm:p-7">
               <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
